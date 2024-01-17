@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React from "react";
+import NavLink from "../NavLink";
 
 const navItems = [
   {
@@ -30,9 +31,9 @@ const Navbar = () => {
       <h1 className="text-3xl font-bold text-red-500">NEXT HERO</h1>
       <ul className="flex items-center justify-center gap-8">
         {navItems.map(({ path, title }) => (
-          <Link href={path} key={path}>
+          <NavLink exact={path === '/'} activeClassName='text-red-500' href={path} key={path}>
             <li>{title}</li>
-          </Link>
+          </NavLink>
         ))}
       </ul>
     </div>
