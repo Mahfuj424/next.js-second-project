@@ -31,7 +31,7 @@ const Sidebar = () => {
         {dashboardItems.map(({ path, title }) => (
           <li key={path}>
             <NavLink
-              exact={path === "/dashboard" || "/"}
+              exact
               activeClassName="text-red-500"
               href={path}
             >
