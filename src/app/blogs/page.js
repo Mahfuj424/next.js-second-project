@@ -1,45 +1,20 @@
+import loadBlogsData from "@/utils/loadBlogsData";
 import Link from "next/link";
 import React from "react";
 
-// const blogs = [
-//   {
-//     id: 1,
-//     year: 2023,
-//     title: "blog 1",
-//   },
-//   {
-//     id: 2,
-//     year: 2023,
-//     title: "blog 2",
-//   },
-//   {
-//     id: 3,
-//     year: 2023,
-//     title: "blog 3",
-//   },
-//   {
-//     id: 4,
-//     year: 2023,
-//     title: "blog 4",
-//   },
-//   {
-//     id: 5,
-//     year: 2023,
-//     title: "blog 5",
-//   },
-// ];
+export const metadata = {
+  title: "Blogs | next-hero",
+  description: "Next Hero"
+}
 
 const BlogsPage = async () => {
-  const res = await fetch(`https://jsonplaceholder.typicode.com/posts`, {
-    cache: "force-cache",
-  });
-  const posts = await res.json();
+  const blogs = await loadBlogsData();
 
   return (
     <div className="container mt-5">
-      {posts.map(({ id, body, title }) => (
+      {blogs.map(({ id, body, title }) => (
         <div
-          className="block border border-blue-500 rounded-md p-5 mb-5"
+          className="block border border-red-500 rounded-md p-5 mb-5"
           key={id}
         >
           <div>
