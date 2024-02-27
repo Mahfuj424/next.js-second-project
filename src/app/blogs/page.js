@@ -3,7 +3,7 @@ import Link from "next/link";
 import React from "react";
 
 export const metadata = {
-  title: "Blogs | next-hero",
+  title: "Blogs | Next Hero",
   description: "Next Hero"
 }
 

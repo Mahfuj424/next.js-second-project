@@ -1,8 +1,13 @@
 import SingleBlogsData from "@/utils/SingleBlogsData";
 import React from "react";
 
-const DynamicPage =async ({ params }) => {
-  const { id, title, body } =await SingleBlogsData(params.id);
+export const generateMetaData = async ({params}) => {
+  const { title } = await SingleBlogsData(params.id);
+  return { title: title };
+};
+
+const DynamicPage = async ({ params }) => {
+  const { id, title, body } = await SingleBlogsData(params.id);
   console.log(id, title, body);
   return (
     <div className="mt-10 max-w-screen-xl mx-auto">
