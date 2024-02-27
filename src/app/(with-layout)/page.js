@@ -6,12 +6,6 @@ import PhoneInput from "react-phone-number-input";
 
 export default function Home() {
   const [value, setValue] = useState();
-  // const [number, setNumber] = useState();
-  // const [country, setCountry] = useState("bd");
-
-  // useEffect(() => {
-  //   console.log(number);
-  // }, [number]);
 
   return (
     <main className="flex justify-center items-center mt-40">
