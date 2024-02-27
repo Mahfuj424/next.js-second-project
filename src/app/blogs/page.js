@@ -30,7 +30,9 @@ import React from "react";
 // ];
 
 const BlogsPage = async () => {
-  const res = await fetch(`https://jsonplaceholder.typicode.com/posts`);
+  const res = await fetch(`https://jsonplaceholder.typicode.com/posts`, {
+    cache: "force-cache",
+  });
   const posts = await res.json();
 
   return (
@@ -42,7 +44,9 @@ const BlogsPage = async () => {
         >
           <div>
             <div>
-              <h1>{id} Title: {title}</h1>
+              <h1 className="text-xl font-semibold">
+                {id} {title}
+              </h1>
               <p>Description: {body}</p>
             </div>
             <Link className="inline-block mt-3" href={`/blogs/${id}`}>
